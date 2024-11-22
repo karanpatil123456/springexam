@@ -1,0 +1,61 @@
+ABOUT.JS
+import react from 'react';
+function about() {
+    return (
+        <div>
+            <h1>this is about page </h1>
+        </div>
+    );
+};
+
+export default about;
+
+CONTACT.JS
+import react from 'react';
+function contact () {
+    return (
+        <div>
+            <h1>this is contact page</h1>
+        </div>
+    );
+};
+
+export default contact;
+
+HOME.JS
+import react from 'react';
+import {link} from 'react-router-dom';
+function Home () {
+    return (
+        <div>
+        <center>
+        <h2><center><font color='black'> Home page</font></center></h2>
+        <button>
+        <link to="About" className="rj"> About page</link>
+        </button>
+          <button>
+        <link to="Contact" className=""> About page</link>
+        </button>
+        </center>
+       )
+}
+
+APP.JS
+import {BrowserRouter,Routes, route} from "react-router-dom";
+import Home from "./ Home" ;
+import about from "./ about" ;
+import contact from "./ contact" ;
+function App () {
+    return (
+        <div>
+         <BrowserRouter>
+            <routes>
+              <router index element= {<Home>}></router>
+              <router path= "/about" element = {<about/>}></router>
+              <router path= "/contact" element = {<contact/>}></router>
+            </routes>
+            </BrowserRouter>
+        </div>
+    )
+}
+export default App;

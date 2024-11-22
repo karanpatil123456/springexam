@@ -1,0 +1,59 @@
+react props app.js
+
+import React from "react";
+import Classprops  from "./Classprops";
+import Functionprops from "./Functionprops";
+
+class App extends React.Component{
+    render(){
+    return (
+        <center>
+        <div>
+            <Classprops name="Learner 1" place="place A"/>
+            <button> child Component</button>
+
+            <Classprops name="Learner 2" place="place B"/>
+            <button> cilck</button>
+
+            <Functionprops name="Learner 3" place="place C"/>
+        </div></center>
+    );
+  }
+}
+
+export default App;
+
+REACT Functionprops.JS
+
+// File: Functionprops.js
+import React from 'react';
+
+function Functionprops({ name, place }) {
+  return (
+    <div>
+      <h2>Name: {name}</h2>
+      <p>Place: {place}</p>
+    </div>
+  );
+}
+
+export default Functionprops;
+
+REACT classprops.js
+
+// File: Classprops.js
+import React, { Component } from 'react';
+
+class Classprops extends Component {
+  render() {
+    const { name, place } = this.props;
+    return (
+      <div>
+        <h2>Name: {name}</h2>
+        <p>Place: {place}</p>
+      </div>
+    );
+  }
+}
+
+export default Classprops;
